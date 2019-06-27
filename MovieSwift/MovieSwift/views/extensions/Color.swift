@@ -9,6 +9,8 @@
 import Foundation
 import SwiftUI
 
+//DMX an extension is very powerful, it could even add static property?
+//is steam_white a static property???
 extension Color {
     public static var steam_white: Color {
         Color("steam_white", bundle: nil)
