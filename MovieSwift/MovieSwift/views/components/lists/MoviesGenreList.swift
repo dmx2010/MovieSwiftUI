@@ -24,7 +24,7 @@ struct MoviesGenreList : View {
 #if DEBUG
 struct MoviesGenreList_Previews : PreviewProvider {
     static var previews: some View {
-        MoviesGenreList(genre: Genre(id: 0, name: "test")).environmentObject(store)
+        MoviesGenreList(genre: Genre(id: 0, name: "test")).environmentObject(AppStore.global)
     }
 }
 #endif

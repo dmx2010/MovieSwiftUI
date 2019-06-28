@@ -18,7 +18,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetPopular(page: page, response: response))
+                    AppStore.global.dispatch(action: SetPopular(page: page, response: response))
                 case .failure(_):
                     break
                 }
@@ -32,7 +32,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetTopRated(page: page, response: response))
+                    AppStore.global.dispatch(action: SetTopRated(page: page, response: response))
                 case .failure(_):
                     break
                 }
@@ -46,7 +46,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetUpcoming(page: page, response: response))
+                    AppStore.global.dispatch(action: SetUpcoming(page: page, response: response))
                 case .failure(_):
                     break
                 }
@@ -60,7 +60,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetNowPlaying(page: page, response: response))
+                    AppStore.global.dispatch(action: SetNowPlaying(page: page, response: response))
                 case .failure(_):
                     break
                 }
@@ -76,7 +76,7 @@ struct MoviesActions {
                 (result: Result<Movie, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetDetail(movie: movie, response: response))
+                    AppStore.global.dispatch(action: SetDetail(movie: movie, response: response))
                 case .failure(_):
                     break
                 }
@@ -90,7 +90,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetRecommended(movie: movie, response: response))
+                    AppStore.global.dispatch(action: SetRecommended(movie: movie, response: response))
                 case .failure(_):
                     break
                 }
@@ -105,7 +105,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetSimilar(movie: movie, response: response))
+                    AppStore.global.dispatch(action: SetSimilar(movie: movie, response: response))
                 case .failure(_):
                     break
                 }
@@ -121,7 +121,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetSearch(query: query,
+                    AppStore.global.dispatch(action: SetSearch(query: query,
                                                      page: page,
                                                      response: response))
                 case .failure(_):
@@ -137,7 +137,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Keyword>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetSearchKeyword(query: query, response: response))
+                    AppStore.global.dispatch(action: SetSearchKeyword(query: query, response: response))
                 case .failure(_):
                     break
                 }
@@ -151,7 +151,7 @@ struct MoviesActions {
             { (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetMovieForGenre(genre: genre, response: response))
+                    AppStore.global.dispatch(action: SetMovieForGenre(genre: genre, response: response))
                 case .failure(_):
                     break
                 }
@@ -165,7 +165,7 @@ struct MoviesActions {
                 (result: Result<PaginatedResponse<Review>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetMovieReviews(movie: movie, response: response))
+                    AppStore.global.dispatch(action: SetMovieReviews(movie: movie, response: response))
                 case .failure(_):
                     break
                 }
@@ -180,7 +180,7 @@ struct MoviesActions {
             { (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetMovieWithCrew(crew: crew, response: response))
+                    AppStore.global.dispatch(action: SetMovieWithCrew(crew: crew, response: response))
                 case .failure(_):
                     break
                 }
@@ -196,7 +196,7 @@ struct MoviesActions {
             { (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetMovieWithKeyword(keyword: keyword, response: response))
+                    AppStore.global.dispatch(action: SetMovieWithKeyword(keyword: keyword, response: response))
                 case .failure(_):
                     break
                 }
@@ -214,7 +214,7 @@ struct MoviesActions {
             { (result: Result<PaginatedResponse<Movie>, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetRandomDiscover(filter: filter!, response: response))
+                    AppStore.global.dispatch(action: SetRandomDiscover(filter: filter!, response: response))
                 case .failure(_):
                     break
                 }
@@ -232,7 +232,7 @@ struct MoviesActions {
             { (result: Result<GenresResponse, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetGenres(genres: response.genres))
+                    AppStore.global.dispatch(action: SetGenres(genres: response.genres))
                 case .failure(_):
                     break
                 }

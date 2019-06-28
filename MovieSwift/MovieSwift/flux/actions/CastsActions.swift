@@ -15,7 +15,7 @@ struct CastsActions {
                 (result: Result<CastResponse, APIService.APIError>) in
                 switch result {
                 case let .success(response):
-                    store.dispatch(action: SetMovieCasts(movie: movie, response: response))
+                    AppStore.global.dispatch(action: SetMovieCasts(movie: movie, response: response))
                 case .failure(_):
                     break
                 }

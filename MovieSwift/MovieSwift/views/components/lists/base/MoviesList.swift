@@ -25,7 +25,7 @@ final class SearchPageListener: PageListener {
     var text: String!
     
     override func loadPage() {
-        store.dispatch(action: MoviesActions.FetchSearch(query: text, page: currentPage))
+        AppStore.global.dispatch(action: MoviesActions.FetchSearch(query: text, page: currentPage))
     }
 }
 

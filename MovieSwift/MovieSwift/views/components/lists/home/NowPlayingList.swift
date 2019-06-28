@@ -10,7 +10,7 @@ import SwiftUI
 
 final class NowPlayingPageListener: PageListener {
     override func loadPage() {
-        store.dispatch(action: MoviesActions.FetchNowPlaying(page: currentPage))
+        AppStore.global.dispatch(action: MoviesActions.FetchNowPlaying(page: currentPage))
     }
 }
 

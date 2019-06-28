@@ -11,7 +11,7 @@ import Combine
 
 final class PopularPageListener: PageListener {
     override func loadPage() {
-        store.dispatch(action: MoviesActions.FetchPopular(page: currentPage))
+        AppStore.global.dispatch(action: MoviesActions.FetchPopular(page: currentPage))
     }
 }
 

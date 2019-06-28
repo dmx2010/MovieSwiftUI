@@ -10,7 +10,7 @@ import SwiftUI
 
 final class UpcomingPageListener: PageListener {
     override func loadPage() {
-        store.dispatch(action: MoviesActions.FetchUpcoming(page: currentPage))
+        AppStore.global.dispatch(action: MoviesActions.FetchUpcoming(page: currentPage))
     }
 }
 

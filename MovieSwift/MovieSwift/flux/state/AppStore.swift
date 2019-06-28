@@ -72,7 +72,9 @@ extension AppStore {
     }
 }
 
-let store = AppStore(useAchivedState: true)
+extension AppStore {
+    static let global = AppStore(useAchivedState: true)
+}
 
 #if DEBUG
 let sampleCustomList = CustomList(name: "TestName",

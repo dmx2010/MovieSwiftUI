@@ -16,7 +16,7 @@ struct MovieRatingRow : View {
             HStack {
                 PopularityBadge(score: Int(movie.vote_average * 10))
                 Text("\(movie.vote_count) ratings")
-                PresentationButton(destination: MovieReviews(movie: movie.id).environmentObject(store),
+                PresentationButton(destination: MovieReviews(movie: movie.id).environmentObject(AppStore.global),
                                    label: {
                                     HStack {
                                         Text("Reviews").color(.steam_blue)

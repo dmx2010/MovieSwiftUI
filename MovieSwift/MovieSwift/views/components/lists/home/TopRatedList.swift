@@ -10,7 +10,7 @@ import SwiftUI
 
 final class TopRatedListPageListener: PageListener {
     override func loadPage() {
-        store.dispatch(action: MoviesActions.FetchTopRated(page: currentPage))
+        AppStore.global.dispatch(action: MoviesActions.FetchTopRated(page: currentPage))
     }
 }
 

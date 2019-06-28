@@ -21,14 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         #else
         let window = UIWindow(frame: UIScreen.main.bounds)
         #endif
-        window.rootViewController = UIHostingController(rootView: Tabbar().environmentObject(store))
+        window.rootViewController = UIHostingController(rootView: Tabbar().environmentObject(AppStore.global))
         window.tintColor = UIColor(named: "steam_gold")
         self.window = window
         window.makeKeyAndVisible()
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
-        store.archiveState()
+        AppStore.global.archiveState()
     }
 }
 

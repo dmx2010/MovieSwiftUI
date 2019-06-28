@@ -156,7 +156,7 @@ struct DiscoverFilterForm : View {
 #if DEBUG
 struct DiscoverFilterForm_Previews : PreviewProvider {
     static var previews: some View {
-        DiscoverFilterForm(isPresented: .constant(false)).environmentObject(store)
+        DiscoverFilterForm(isPresented: .constant(false)).environmentObject(AppStore.global)
     }
 }
 #endif
