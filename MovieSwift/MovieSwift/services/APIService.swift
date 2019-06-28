@@ -14,6 +14,9 @@ struct APIService {
     static let shared = APIService()
     let decoder = JSONDecoder()
     
+}
+
+extension APIService {
     enum APIError: Error {
         case noResponse
         case jsonDecodingError(error: Error)
@@ -59,6 +62,9 @@ struct APIService {
             }
         }
     }
+}
+
+extension APIService {
     
     //DMX who calls this GET. Is there anyway we can simplify this method? It is only
     //downloading something here. Can we make it more functional?
