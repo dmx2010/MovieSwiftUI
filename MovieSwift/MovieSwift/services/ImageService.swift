@@ -18,12 +18,14 @@ class ImageService {
     //TODO: Build disk cache too.
     private var memCache: [String: UIImage] = [:]
     
+    //DMX: the power of enum and the everywhere enum in Swift
     enum Size: String {
         case small = "https://image.tmdb.org/t/p/w154/"
         case medium = "https://image.tmdb.org/t/p/w500/"
         case cast = "https://image.tmdb.org/t/p/w185/"
         case original = "https://image.tmdb.org/t/p/original/"
         
+        // DMX so the rawValue is https://image.tmdb.org/t/p/w154/ etc???
         func path(poster: String) -> URL {
             return URL(string: rawValue)!.appendingPathComponent(poster)
         }
@@ -47,6 +49,7 @@ class ImageService {
             completionHandler(.success(cachedImage))
             return
         }
+        //DMX: what does a queue.async really mean?
         ImageService.queue.async {
             do {
                 let data = try Data(contentsOf: size.path(poster: poster))
@@ -54,6 +57,11 @@ class ImageService {
                 DispatchQueue.main.async {
                     if let image = image {
                         self.memCache[poster] = image
+                        //DMX who and when does the completionHandler gets
+                        //    called
+                        //    sorry. this completionHandler is a block/closure
+                        //    passed in. So it is us calling the completionHandler
+                        //    to let the caller know. this completionHandler is not a built-in
                         completionHandler(.success(image))
                     } else {
                         completionHandler(.failure(ImageError.decodingError))
