@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+//DMX what does the DiscoverFilter being a Codable mean???
 struct DiscoverFilter: Codable {
     let year: Int
     let startYear: Int?
@@ -44,7 +45,11 @@ struct DiscoverFilter: Codable {
     }
     
     func toParams() -> [String: String] {
+        //DMX: simple and easy to use and understand Map implementation
         var params: [String: String] = [:]
+        //DMX: both startYear and endYear have to have value? very interesting optional
+        //     and idiom of let startYear = startYear and how the compiler decides which
+        //     is which to use. It is a bit confusing though.
         if let startYear = startYear, let endYear = endYear {
             params["primary_release_date.gte"] = "\(startYear)"
             params["primary_release_date.lte"] = "\(endYear)"
@@ -57,6 +62,7 @@ struct DiscoverFilter: Codable {
         if let region = region {
             params["region"] = region
         }
+        //DMX: this is crazy. How does the compiler compile this???
         params["page"] = "\(DiscoverFilter.randomPage())"
         params["sort_by"] = sort
         params["language"] = "en-US"
