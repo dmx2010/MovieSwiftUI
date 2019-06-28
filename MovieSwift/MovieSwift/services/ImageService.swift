@@ -53,8 +53,10 @@ extension ImageService {
 
 extension ImageService {
     
+    typealias UIImageCompletionHandler = (Result<UIImage, Error>) -> Void
+    
     // TODO: Prefix memcache with poster size.
-    func image(poster: String, size: Size, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
+    func image(poster: String, size: Size, completionHandler: @escaping UIImageCompletionHandler) {
         if let cachedImage = memCache[poster] {
             completionHandler(.success(cachedImage))
             return
@@ -72,6 +74,9 @@ extension ImageService {
                         //    sorry. this completionHandler is a block/closure
                         //    passed in. So it is us calling the completionHandler
                         //    to let the caller know. this completionHandler is not a built-in
+                        
+                        //DMX that is how you create an enum with customizable content in Swift
+                        //    here we could a .success result with an UIImage
                         completionHandler(.success(image))
                     } else {
                         completionHandler(.failure(ImageError.decodingError))
