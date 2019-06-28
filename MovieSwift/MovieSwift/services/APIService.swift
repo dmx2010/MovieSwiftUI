@@ -60,6 +60,8 @@ struct APIService {
         }
     }
     
+    //DMX who calls this GET. Is there anyway we can simplify this method? It is only
+    //downloading something here. Can we make it more functional?
     func GET<T: Codable>(endpoint: Endpoint,
                          params: [String: String]?,
                          completionHandler: @escaping (Result<T, APIError>) -> Void) {
@@ -99,6 +101,7 @@ struct APIService {
                 }
             }
         }
+        //DMX: where/which thread does this resume happen?
         task.resume()
     }
     
