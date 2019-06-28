@@ -18,6 +18,9 @@ class ImageService {
     //TODO: Build disk cache too.
     private var memCache: [String: UIImage] = [:]
     
+}
+
+extension ImageService {
     //DMX: the power of enum and the everywhere enum in Swift
     enum Size: String {
         case small = "https://image.tmdb.org/t/p/w154/"
@@ -35,6 +38,9 @@ class ImageService {
         case decodingError
     }
     
+}
+
+extension ImageService {
     func purgeCache() {
         memCache.removeAll()
     }
@@ -42,6 +48,10 @@ class ImageService {
     func syncImageFromCache(poster: String, size: Size) -> UIImage? {
         return memCache[poster]
     }
+    
+}
+
+extension ImageService {
     
     // TODO: Prefix memcache with poster size.
     func image(poster: String, size: Size, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
