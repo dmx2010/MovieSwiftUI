@@ -8,6 +8,8 @@
 
 import Foundation
 
+//DMX: here the MoviesActions is kind of like providing a name spaces to all the following
+//     Action
 struct MoviesActions {
     
     // MARK: - Requests
