@@ -30,7 +30,9 @@ final class AppStore: BindableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
-    init(useAchivedState: Bool, moviesState: MoviesState = MoviesState(), castsState: CastsState = CastsState()) {
+    init(useAchivedState: Bool, moviesState: MoviesState = MoviesState(), castsState: CastsState = CastsState())
+    //DMX: for a overlong arguments, I prefer to start the { in a newline
+    {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory,
                                                                 in: .userDomainMask,
@@ -43,7 +45,8 @@ final class AppStore: BindableObject {
         
         if useAchivedState,
             let data = try? Data(contentsOf: savePath),
-            let moviesState = try? decoder.decode(MoviesState.self, from: data) {
+            let moviesState = try? decoder.decode(MoviesState.self, from: data)
+        {
             state.moviesState = moviesState
         } else {
             state.moviesState = moviesState
@@ -51,7 +54,9 @@ final class AppStore: BindableObject {
         
         state.castsState = castsState
     }
-    
+}
+
+extension AppStore {
     func archiveState() {
         guard let data = try? encoder.encode(state.moviesState) else {
             return
