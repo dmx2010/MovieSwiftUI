@@ -17,7 +17,10 @@ struct DiscoverFilter: Codable {
     let sort: String
     let genre: Int?
     let region: String?
-    
+}
+
+//DMX: absolutelt love the extension mechanism
+extension DiscoverFilter {
     static func randomFilter() -> DiscoverFilter {
         return DiscoverFilter(year: randomYear(),
                               startYear: nil,
