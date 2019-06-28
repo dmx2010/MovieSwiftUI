@@ -9,11 +9,15 @@
 import Foundation
 
 struct APIService {
+    
     let baseURL = URL(string: "https://api.themoviedb.org/3")!
     let apiKey = "1d9b898a212ea52e283351e521e17871"
-    static let shared = APIService()
     let decoder = JSONDecoder()
     
+}
+
+extension APIService {
+    static let shared = APIService()
 }
 
 extension APIService {
