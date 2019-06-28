@@ -47,6 +47,9 @@ extension DiscoverFilter {
         return Int.random(in: 1..<20)
     }
     
+}
+
+extension DiscoverFilter {
     func toParams() -> [String: String] {
         //DMX: simple and easy to use and understand Map implementation
         var params: [String: String] = [:]
