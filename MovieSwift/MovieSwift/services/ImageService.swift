@@ -12,6 +12,7 @@ import UIKit
 
 class ImageService {
     static let shared = ImageService()
+    
     private static let queue = DispatchQueue(label: "Image queue",
                                      qos: DispatchQoS.userInitiated)
     
