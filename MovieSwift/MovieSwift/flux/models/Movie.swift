@@ -10,6 +10,9 @@ import Foundation
 import SwiftUI
 
 struct Movie: Codable, Identifiable {
+    //DMX one of the thing I don't like is to use a primitive type to represent identification.
+    //I would prefer to create an ID struct, the ID struct could very well has only an int field
+    //You could then have CastID, MovieID etc
     let id: Int
     let original_title: String
     let overview: String
