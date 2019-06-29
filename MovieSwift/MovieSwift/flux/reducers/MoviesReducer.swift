@@ -16,6 +16,10 @@ struct MoviesReducer: Reducer {
         //     argument's state?
         var state = state
         switch action {
+        //DMX: again, quarky variable override. SetPopular is an struct, and it has no common
+        //     with other structs inside the MoviesActions. So it makes a lot of sense to
+        //     have a case let action as ... statement, even though it is very strange from
+        //     C/C++ and Java
         case let action as MoviesActions.SetPopular:
             if action.page == 1 {
                 state.popular = action.response.results.map{ $0.id }
