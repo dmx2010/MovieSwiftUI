@@ -24,13 +24,18 @@ struct Movie: Codable, Identifiable {
     let runtime: Int?
     let status: String?
     
+    //DMX even Keywords, Images and productionCountry are defined in extension
+    //    you could still start to use them in the main definition. You cannot
+    //    define new property in extension
     var keywords: Keywords?
     var images: Images?
-    
     var production_countries: [productionCountry]?
     
+}
+
+extension Movie {
     //Here, Keywords is defined as a struct, but don't forgot that Keyword itself is also
-    //a struct. why we need a Keywords structure here? Nothing. 
+    //a struct. why we need a Keywords structure here? Nothing.
     struct Keywords: Codable {
         let keywords: [Keyword]?
     }
