@@ -39,6 +39,10 @@ final class ImageLoader: BindableObject {
 extension ImageLoader {
     
     func loadImage() {
+        //DMX: again the quarky Swift idiom, if the member variable poster has value then
+        //     give it to the local poster variable.
+        //     also the guard statement, it does make it more readable and make the statement
+        //     purpose more obvious
         guard let poster = poster else {
             //DMX this assignment is a powerful statement, because it is a set on a property,
             //    it triggers the didSet defined in the missing property, which calls the
