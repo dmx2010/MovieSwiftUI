@@ -28,11 +28,15 @@ final class ImageLoader: BindableObject {
             didChange.send(nil)
         }
     }
-    
+
     init(poster: String?, size: ImageService.Size) {
         self.size = size
         self.poster = poster
     }
+
+}
+
+extension ImageLoader {
     
     func loadImage() {
         guard let poster = poster else {
@@ -46,4 +50,5 @@ final class ImageLoader: BindableObject {
             do { self.image = try result.get() } catch { }
         }
     }
+    
 }
