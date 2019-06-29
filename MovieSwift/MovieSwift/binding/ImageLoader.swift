@@ -36,6 +36,9 @@ final class ImageLoader: BindableObject {
     
     func loadImage() {
         guard let poster = poster else {
+            //DMX this assignment is a powerful statement, because it is a set on a property,
+            //    it triggers the didSet defined in the missing property, which calls the
+            //    Combine didChange to sent event to its subscriber
             missing = true
             return
         }
