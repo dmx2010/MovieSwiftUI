@@ -29,6 +29,8 @@ struct Movie: Codable, Identifiable {
     
     var production_countries: [productionCountry]?
     
+    //Here, Keywords is defined as a struct, but don't forgot that Keyword itself is also
+    //a struct. why we need a Keywords structure here? Nothing. 
     struct Keywords: Codable {
         let keywords: [Keyword]?
     }
