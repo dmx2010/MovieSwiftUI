@@ -16,6 +16,7 @@ final class ImageLoader: BindableObject {
     let poster: String?
     let size: ImageService.Size
     
+    //DMX who subscribe to the didChange? Is this Combine??
     var image: UIImage? = nil {
         didSet {
             didChange.send(image)
