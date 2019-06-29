@@ -18,6 +18,8 @@ struct CastsReducer: Reducer {
             for cast in action.response.crew {
                 state.casts[cast.id] = cast
             }
+            
+            //DMX the power of operator override. be thoughtful when using operator override
             state.castsMovie[action.movie] = action.response.cast.map{ $0.id } + action.response.crew.map{ $0.id }
         }
         return state
