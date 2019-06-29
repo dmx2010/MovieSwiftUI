@@ -10,6 +10,10 @@ import Foundation
 
 struct MoviesReducer: Reducer {
     func reduce(state: MoviesState, action: Action) -> MoviesState {
+        //DMX  again, very quarky and very strange statement in Swift. So the state passed
+        //     in in the arguments is a 'let', aka, a constant? How the compiler figure
+        //     out which state is which one? Once shadowed, is there anyway to get back the
+        //     argument's state?
         var state = state
         switch action {
         case let action as MoviesActions.SetPopular:
