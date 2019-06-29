@@ -8,6 +8,7 @@
 
 import Foundation
 
+//DMX: it should be called MovieGraph, MovieAssociation, or MovieLink
 struct MoviesState: FluxState, Codable {
     var movies: [Int: Movie] = [:]
     var recommended: [Int: [Int]] = [:]
