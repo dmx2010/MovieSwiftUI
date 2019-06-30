@@ -9,6 +9,10 @@
 import Foundation
 
 struct CastsActions {
+    //DMX this is to make it clear that CastsActions is just a namespace
+}
+
+extension CastsActions {
     struct FetchMovieCasts: Action {
         init(movie: Int) {
             APIService.shared.GET(endpoint: .credits(movie: movie), params: nil) {
@@ -23,8 +27,13 @@ struct CastsActions {
         }
     }
     
+}
+
+extension CastsActions {
+    
     struct SetMovieCasts: Action {
         let movie: Int
         let response: CastResponse
     }
+    
 }
