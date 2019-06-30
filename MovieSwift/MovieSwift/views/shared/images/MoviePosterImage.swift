@@ -45,8 +45,8 @@ struct MoviePosterImage : View {
                     .foregroundColor(.gray)
                     .posterStyle(loaded: false)
             }
-            }.onAppear {
-                self.imageLoader.loadImage()
+        }.onAppear {
+            self.imageLoader.loadImage()
         }
     }
 }
