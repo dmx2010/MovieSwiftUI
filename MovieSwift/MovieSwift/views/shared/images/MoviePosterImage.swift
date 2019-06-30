@@ -24,6 +24,7 @@ extension View {
     //     the Modified takes an existing view and have the modifier to modify based on it. in our case, the PosterStyle
     //     just add a frame to the image, set the cornerRadius, opacity and shadow. This is just crazy powerful.
     func posterStyle(loaded: Bool) -> some View {
+        //DMX so the Modified is going to call PosterStyle.body and passes in the self as the content argument?
         return Modified(content: self, modifier: PosterStyle(loaded: loaded))
     }
 }
