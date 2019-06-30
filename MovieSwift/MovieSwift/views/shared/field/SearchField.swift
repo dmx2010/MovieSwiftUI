@@ -21,11 +21,13 @@ struct SearchField : View {
         HStack(alignment: .center, spacing: -10) {
             Image(systemName: "magnifyingglass")
             TextField($searchText,
-                      placeholder: Text("Search any movies"))
-                .onReceive(NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification)
-                    .debounce(for: 0.5,
+                      placeholder: Text("Search any movies")) //DMX end of TextField def here, rest are just modifier
+                //DMX first taste of Combine. very powerful.
+                .onReceive(
+                        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification)
+                        .debounce(for: 0.5,
                               scheduler: DispatchQueue.main),
-                           perform: onKeyStroke)
+                    perform: onKeyStroke)
                 .textFieldStyle(.roundedBorder)
                 .listRowInsets(EdgeInsets())
                 .padding()
