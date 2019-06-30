@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SearchField : View {
+    //DMX again, reminds me what is the difference between @Binding and @State?
     @Binding var searchText: String
     let placeholder: Text
     let onUpdateSearchText: (String) -> Void
