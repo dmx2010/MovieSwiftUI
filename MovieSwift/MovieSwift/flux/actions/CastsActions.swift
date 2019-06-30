@@ -13,6 +13,7 @@ struct CastsActions {
 }
 
 extension CastsActions {
+    
     struct FetchMovieCasts: Action {
         init(movie: Int) {
             APIService.shared.GET(endpoint: .credits(movie: movie), params: nil) {
