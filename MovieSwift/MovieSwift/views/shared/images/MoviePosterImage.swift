@@ -26,7 +26,12 @@ extension View {
 }
 
 struct MoviePosterImage : View {
+    //DMX powerful variable semantics. This just means imageLoader is a variable, and must have
+    //    a value, meaning that when create MoviePosterImage, the caller must pass in an imageLoader
+    //    argument, and it cannot be nil. and without all the boiler plate code. See the call site
+    //    in MovieRow.swift
     @State var imageLoader: ImageLoader
+    //DMX since this one has a default value, so it is optional when creating MoviePosterImage.
     @State var isImageLoaded = false
     
     var body: some View {
