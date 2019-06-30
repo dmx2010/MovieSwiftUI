@@ -20,6 +20,9 @@ struct PosterStyle: ViewModifier {
 }
 
 extension View {
+    //DMX. great extension usage. it is called below. it creates a Modified View. It just makes it easy to use.
+    //     the Modified takes an existing view and have the modifier to modify based on it. in our case, the PosterStyle
+    //     just add a frame to the image, set the cornerRadius, opacity and shadow. This is just crazy powerful.
     func posterStyle(loaded: Bool) -> some View {
         return Modified(content: self, modifier: PosterStyle(loaded: loaded))
     }
