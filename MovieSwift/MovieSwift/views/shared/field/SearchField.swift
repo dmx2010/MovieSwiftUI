@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SearchField : View {
     //DMX again, reminds me what is the difference between @Binding and @State?
+    //DMX weird. if change to @State, in the preview, it could complain about String has no field .constant
     @Binding var searchText: String
     let placeholder: Text
     let onUpdateSearchText: (String) -> Void
