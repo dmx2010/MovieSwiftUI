@@ -43,6 +43,9 @@ struct MoviePosterImage : View {
                 Image(uiImage: self.imageLoader.image!)
                     .resizable()
                     .renderingMode(.original)
+                    //DMX the power of extension, it makes it like just a normal operation, which makes tons of
+                    //    sense. it is more like real life, over time, a class/an object learns new trick. The challenge
+                    //    is to do it safe and not compromise, for example, to grab the private password field etc.
                     .posterStyle(loaded: true)
                     .animation(.basic())
                     .onAppear{
