@@ -116,8 +116,8 @@ struct DiscoverView : View {
                               systemImageName: "line.horizontal.3.decrease",
                               color: .steam_blue,
                               isOn: false) {
-                                self.filterFormPresented = true
-        }
+                                  self.filterFormPresented = true
+                              }
     }
     
     private var actionsButtons: some View {
