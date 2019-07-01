@@ -83,6 +83,8 @@ struct MoviesList : View {
         })
     }
     
+    
+    //DMX A super dupe function builder
     var body: some View {
         List {
             if displaySearch {

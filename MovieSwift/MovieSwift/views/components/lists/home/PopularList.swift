@@ -16,6 +16,12 @@ final class PopularPageListener: PageListener {
 }
 
 struct PopularList : View {
+    //DMX this is used in Tabbar as well. so what is the difference between an EnvironmentObject
+    //    and a global static instance, like the one in AppStore's static global?
+    //    since this is not production code but a very good open source demo app, I would have to let
+    //    this question go. since there are lot of places in this app that just use AppStore.global
+    //    instead of using the @EnvironmentObject. we will have to wait for Apple detail documentation
+    //    to understand why @EnvironmentObject is needed
     @EnvironmentObject var store: AppStore
     @State var pageListener = PopularPageListener()
     

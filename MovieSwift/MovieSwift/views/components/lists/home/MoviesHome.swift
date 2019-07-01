@@ -25,15 +25,16 @@ struct MoviesHome : View {
                 Text("Top Rated").tag(Categories.topRated)
                 Text("Upcoming").tag(Categories.upcoming)
                 Text("Now Playing").tag(Categories.nowPlaying)
+            }
+            .navigationBarItems(trailing:
+                PresentationButton(destination: SettingsForm()) {
+                    Image(systemName: "gear")
                 }
-                .navigationBarItems(trailing:
-                    PresentationButton(destination: SettingsForm()) {
-                        Image(systemName: "gear")
-                    }
-                )
-                .navigationBarHidden(false)
-                .padding(.leading)
-                .padding(.trailing)
+            )
+            .navigationBarHidden(false)
+            .padding(.leading)
+            .padding(.trailing)
+            
             if selectedIndex == .popular {
                 PopularList()
             } else if selectedIndex == .topRated {
