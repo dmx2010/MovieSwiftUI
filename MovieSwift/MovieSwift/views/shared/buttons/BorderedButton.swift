@@ -16,18 +16,21 @@ struct BorderedButton : View {
     let action: () -> Void
     
     var body: some View {
-        Button(action: {
-            self.action()
-        }, label: {
-            HStack(alignment: .center, spacing: 4) {
-                Image(systemName: systemImageName).foregroundColor(isOn ? .white : color)
-                Text(text).color(isOn ? .white : color)
+        Button(
+            action: {
+                self.action()
+            },
+            label: {
+                HStack(alignment: .center, spacing: 4) {
+                    Image(systemName: systemImageName).foregroundColor(isOn ? .white : color)
+                    Text(text).color(isOn ? .white : color)
+                }
             }
-        })
-            .padding(6)
-            .border(color, width: isOn ? 0 : 1, cornerRadius: 8)
-            .background(isOn ? color : Color.clear)
-            .cornerRadius(8)
+        )
+        .padding(6)
+        .border(color, width: isOn ? 0 : 1, cornerRadius: 8)
+        .background(isOn ? color : Color.clear)
+        .cornerRadius(8)
     }
 }
 
