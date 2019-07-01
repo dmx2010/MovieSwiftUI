@@ -11,6 +11,7 @@ import SwiftUI
 //DMX this is the normal home page, when user (or by default) selects the Movies tab
 //    on the bottom tab selection (known as Tabbar in MovieSwift)
 struct MoviesHome : View {
+    //DMX an enum inheriated from Int, what does it mean?
     enum Categories: Int {
         case popular, topRated, upcoming, nowPlaying
     }
