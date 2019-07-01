@@ -42,13 +42,13 @@ struct MovieBackdropImage : View {
                             .blur(radius: self.forceBlur ? 50 : self.blurFor(minY: geometry.frame(in: .global).minY), opaque: false)
                             .opacity(self.isImageLoaded ? 1 : 0)
                             .animation(.basic())
-                            .onAppear{
+                            .onAppear {
                                 self.isImageLoaded = true
-                        }
+                            }
                     }
-                    }
-                    .frame(maxHeight: fill ? 50 : 300)
-                    .aspectRatio(500/300, contentMode: fill ? .fill : .fit)
+                }
+                .frame(maxHeight: fill ? 50 : 300)
+                .aspectRatio(500/300, contentMode: fill ? .fill : .fit)
             } else {
                 Rectangle()
                     .frame(maxHeight: fill ? 50 : 300)
