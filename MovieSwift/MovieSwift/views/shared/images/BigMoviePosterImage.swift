@@ -35,8 +35,8 @@ struct BigMoviePosterImage : View {
                     .shadow(radius: 8)
                     .opacity(0.1)
             }
-            }.onAppear {
-                self.imageLoader.loadImage()
+        }.onAppear {
+            self.imageLoader.loadImage()
         }
     }
 }
