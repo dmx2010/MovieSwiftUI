@@ -56,8 +56,8 @@ struct MovieBackdropImage : View {
                     .foregroundColor(.gray)
                     .opacity(0.1)
             }
-            }.onAppear {
-                self.imageLoader.loadImage()
+        }.onAppear {
+            self.imageLoader.loadImage()
         }
     }
 }
